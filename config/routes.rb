@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  # この行を編集する
   root 'pages#home'
+
+  # ここにusersコントローラーのshowアクションのルーティングを追加する
+  get '/users/:id', to: 'users#show', as: 'user'
 end
